@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Image Redirect</title>
+    <title>Random Image Redirect with Background Music</title>
     <style>
         body {
             display: flex;
@@ -28,11 +28,37 @@
 <body>
     <button onclick="redirectToRandomPage()">Random Image</button>
 
+    <!-- Müzik Çalar -->
+    <audio id="bgMusic" autoplay loop>
+        <source src="music/song.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- JavaScript -->
     <script>
         function redirectToRandomPage() {
             const randomPage = Math.floor(Math.random() * 20) + 1;
             window.location.href = `image${randomPage}.html`;
         }
+
+        // JavaScript ile müzik çaları kontrol etmek için örnek fonksiyonlar:
+        const bgMusic = document.getElementById('bgMusic');
+
+        // Müziği duraklatmak için:
+        function pauseMusic() {
+            bgMusic.pause();
+        }
+
+        // Müziği tekrar başlatmak için:
+        function playMusic() {
+            bgMusic.play();
+        }
+
+        // Sayfa yüklendiğinde otomatik olarak müziği başlatmak için:
+        document.addEventListener('DOMContentLoaded', function() {
+            // bgMusic.play(); // başlatmak için
+        });
     </script>
 </body>
 </html>
+
