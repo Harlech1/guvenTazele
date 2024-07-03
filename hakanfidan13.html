@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image 13</title>
+    <title>Güveninizi Tazeleyin</title>
     <style>
         body {
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
@@ -17,10 +18,31 @@
             max-height: 80%;
             width: auto;
             height: auto;
+            margin-bottom: 50px; /* 50 pixel boþluk býrak */
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            position: fixed;
+            bottom: 50px; /* Ekranýn altýndan 50 pixel yukarýda */
+            left: 50%; /* Sayfanýn ortasýnda */
+            transform: translateX(-50%); /* Butonu yatayda ortala */
         }
     </style>
 </head>
 <body>
-    <img src="images/image13.jpg" alt="Random Image 13">
+
+    <img id="randomImage" src="images/image13.jpg" alt="Random Hakan Fidan">
+
+    <button onclick="redirectToRandomPage()">Tazele</button>
+
+    <script>
+        function redirectToRandomPage() {
+            const randomPage = Math.floor(Math.random() * 20) + 1;
+            window.location.href = `hakanfidan${randomPage}.html`;
+        }
+    </script>
+
 </body>
 </html>

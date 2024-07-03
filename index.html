@@ -40,21 +40,16 @@
             const randomPage = Math.floor(Math.random() * 20) + 1;
             window.location.href = `hakanfidan${randomPage}.html`;
         }
-
-        // JavaScript ile müzik çaları kontrol etmek için örnek fonksiyonlar:
         const bgMusic = document.getElementById('bgMusic');
 
-        // Müziği duraklatmak için:
         function pauseMusic() {
             bgMusic.pause();
         }
 
-        // Müziği tekrar başlatmak için:
         function playMusic() {
             bgMusic.play();
         }
 
-        // Sayfa yüklendiğinde otomatik olarak müziği başlatmak için:
         document.addEventListener('DOMContentLoaded', function() {
             bgMusic.play();
         });
